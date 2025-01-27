@@ -1,0 +1,3 @@
+backend\deploy\test\BackendTestDeployApplication.class
+backend\deploy\test\swagger\SwaggerConfig.class
+backend\deploy\test\controller\Controller.class

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: backend.deploy.test.BackendTestDeployApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.157 s -- in backend.deploy.test.BackendTestDeployApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.224 s -- in backend.deploy.test.BackendTestDeployApplicationTests
