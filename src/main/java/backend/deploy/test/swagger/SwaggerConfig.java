@@ -13,6 +13,6 @@ public class SwaggerConfig {
 	public OpenAPI custonOpenAPI() {
 		return new OpenAPI().info(new Info().title("API de prueba para despliegue")
 											.version("1.0.0")
-											.description("Esta documentacion de la API  de prueba para intentar desplegarlo a distintas plataformas"));
+											.description("Esta documentacion de API  de prueba para intentar desplegarlo a distintas plataformas - creado por Luiz Beto"));
 	}
 }

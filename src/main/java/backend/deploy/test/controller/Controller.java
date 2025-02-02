@@ -9,7 +9,7 @@ public class Controller {
 
 	@GetMapping("/hello")
 	public String hola() {
-		return "Hola Luis, te saludo desde Render";
+		return "Hola, te saludo desde la nube :)";
 	}
 	
 	@PostMapping("/saludo")
