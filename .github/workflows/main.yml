@@ -19,6 +19,9 @@ jobs: #conjunto de tareas
           java-version: '17' #La version de java que estoy usando
           distribution: 'temurin' #especifica la distribucion de JDK
 
+      - name: Dando permisos de ejecucion para Maven Wrapper
+        run: chmod +x ./mvn
+        
       - name: Build JAR
         run: ./mvnw clean package -DskipTests #Aca estoy construyendo el jar de mi proyecto
 
