@@ -3,4 +3,4 @@ spring:
     name: backend-test-deploy
 springdoc:
   swagger-ui:
-    path: /swagger
+    path: /swagger.html
