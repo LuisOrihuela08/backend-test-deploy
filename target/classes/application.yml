@@ -2,6 +2,38 @@ spring:
   application:
     name: backend-test-deploy
     
-springdoc:
+  profiles:
+    active: prod  # Perfil por defecto
+
+---
+# Configuración para el perfil 'default'
+spring:
+  config:
+    activate:
+      on-profile: default
+ 
+springdoc:     
+  swagger-ui:
+    path: /swagger-ui-custom.html
+
+---
+# Configuración para el perfil 'dev'
+spring:
+  config:
+    activate:
+      on-profile: dev
+ 
+springdoc:     
+  swagger-ui:
+    path: /swagger-ui-custom.html
+
+---
+# Configuración para el perfil 'prod'
+spring:
+  config:
+    activate:
+      on-profile: prod
+ 
+springdoc:    
   swagger-ui:
     path: /swagger-ui-custom.html
