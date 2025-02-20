@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: backend-test-deploy
+springdoc:
+  swagger-ui:
+    path: /swagger
