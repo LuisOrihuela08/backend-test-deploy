@@ -33,8 +33,8 @@ jobs: #conjunto de tareas
 
       - name: Build Docker image
         #run: docker build -t luisorihuela92/back-test:${{ github.sha }} . #Aca construye la imagen y lo tagea
-        run: docker build -t luisorihuela92/back-test:v2 . #de esta manera manejamos los tags y las versiones
+        run: docker build -t luisorihuela92/back-test:latest . #de esta manera manejamos los tags y las versiones
 
       - name: Push Docker image to Docker Hub
         #run: docker push luisorihuela92/back-test:${{ github.sha }} # Y por último lo sube a Docker Hub
-        run: docker push luisorihuela92/back-test:v2
+        run: docker push luisorihuela92/back-test:latest
