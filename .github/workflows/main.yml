@@ -17,6 +17,7 @@ jobs: #conjunto de tareas
         uses: actions/setup-java@v3
         with:
           java-version: '17' #La version de java que estoy usando
+          distribution: 'temurin' #especifica la distribucion de JDK
 
       - name: Build JAR
         run: ./mvnw clean package -DskipTests #Aca estoy construyendo el jar de mi proyecto
