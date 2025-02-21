@@ -38,3 +38,23 @@ jobs: #conjunto de tareas
       - name: Push Docker image to Docker Hub
         #run: docker push luisorihuela92/back-test:${{ github.sha }} # Y por último lo sube a Docker Hub
         run: docker push luisorihuela92/back-test:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install SSH Client
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy to Virtual Server
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: 192.168.1.23          # IP de tu máquina virtual
+          username: LuisOrihuela      # Tu usuario en la VM
+          key: ${{ secrets.SSH_PRIVATE_KEY }}  # Clave privada guardada en GitHub Secrets
+          port: 22                    # Puerto SSH (por defecto es 22)
+          script: |
+            docker stop backend-test || true
+            docker rm backend-test || true
+            docker pull luisorihuela92/back-test:latest
+            docker run -d --name backend-test -p 8080:8080 luisorihuela92/back-test:latest
