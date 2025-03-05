@@ -19,15 +19,22 @@ public class SwaggerConfig {
 
 	@Bean
     public OpenAPI customOpenAPI() {
-		 // Obtener la solicitud actual
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        String url = "http://localhost:8080"; // Valor por defecto
+		 // Valor por defecto (para evitar problemas si no hay una solicitud HTTP disponible)
+        String url = "http://localhost:8080";
 
+        // Obtener la solicitud actual (solo funciona dentro de un request)
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         if (attributes != null) {
             HttpServletRequest request = attributes.getRequest();
-            String scheme = request.isSecure() ? "https" : "http";
+            String scheme = request.getHeader("X-Forwarded-Proto"); // Detectar si viene de un proxy inverso
+            if (scheme == null) {
+                scheme = request.isSecure() ? "https" : "http"; // Si no hay header, usar método estándar
+            }
+
             String host = request.getServerName();
             int port = request.getServerPort();
+
+            // Construir la URL con protocolo dinámico
             url = scheme + "://" + host + (port != 80 && port != 443 ? ":" + port : "");
         }
 
