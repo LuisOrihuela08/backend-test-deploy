@@ -20,12 +20,15 @@ public class SwaggerConfig {
 
     @Bean
     public OpenAPI customOpenAPI() {
+    	String baseUrl = serverUrlProvider.getHost(); // 🔥 Obtiene solo el host
+    	
         return new OpenAPI()
                 .info(new Info()
                         .title("API de prueba para despliegue")
                         .version("1.0.0")
                         .description("Esta documentación de API de prueba para intentar desplegarlo en distintas plataformas - creado por Luiz Beto"))
-                .servers(List.of(new Server().url(serverUrlProvider.getServerUrl()).description("Dynamic Server")));
+                .servers(List.of(new Server().url("http://" + baseUrl).description("HTTP Server"),
+                				new Server().url("https://" + baseUrl).description("HTTPS Server")));
     }
 
 }
