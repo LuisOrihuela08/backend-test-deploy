@@ -33,6 +33,9 @@ spring:
   config:
     activate:
       on-profile: prod
+
+server:
+  forward-headers-strategy: framework  # Habilita detección de protocolo HTTPS en producción
  
 springdoc:    
   swagger-ui:
