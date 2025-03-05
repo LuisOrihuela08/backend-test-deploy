@@ -12,9 +12,9 @@ public class SwaggerConfig {
 
 	@Bean
 	public OpenAPI custonOpenAPI() {
-		return new OpenAPI().info(new Info().title("API Sistema de Control de Ventas")
+		return new OpenAPI().info(new Info().title("API DEPLOY TEST")
 											.version("1.0.0")
-											.description("Esta documentación es para el sistema de control de ventas gestionada con una base de datos de MongoDB Atlas"));
+											.description("Esta documentación es para realizar pruebas de despliegue en distintas plataformas y servicios"));
 	}
 
 }
