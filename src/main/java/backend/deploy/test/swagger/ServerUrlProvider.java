@@ -8,7 +8,7 @@ import jakarta.servlet.ServletContext;
 public class ServerUrlProvider {
 
 	private final ServletContext servletContext;
-    private String serverUrl;
+    private String host;
 
     public ServerUrlProvider(ServletContext servletContext) {
         this.servletContext = servletContext;
@@ -16,19 +16,16 @@ public class ServerUrlProvider {
 
     @PostConstruct
     public void init() {
-        String scheme = servletContext.getInitParameter("scheme");
-        String host = servletContext.getInitParameter("host");
+        String detectedHost = servletContext.getVirtualServerName(); // 🔥 Obtiene el host automáticamente
 
-        if (scheme == null || host == null) {
-            // Si no están definidos, usa valores por defecto
-            scheme = "http"; // Cambia a "https" si deseas que sea seguro por defecto
-            host = "localhost:8080";
+        if (detectedHost == null || detectedHost.isEmpty()) {
+            detectedHost = "localhost:8080"; // Valor por defecto
         }
 
-        this.serverUrl = scheme + "://" + host;
+        this.host = detectedHost;
     }
 
-    public String getServerUrl() {
-        return serverUrl;
+    public String getHost() {
+        return host; // 🔥 Retorna solo el host sin el esquema
     }
 }
