@@ -3,7 +3,11 @@ name: Build Backend Test and Push Docker Image #Nombre del workflow
 on:
   push: #este workflow se activara cada vez que yo haga un push al repositorio
     branches:
-      - main  #es la rama que tengo mi repositorio
+      - main 
+      - dev
+  pull_request:
+    branches:
+      - dev
 
 jobs: #conjunto de tareas
   build:
