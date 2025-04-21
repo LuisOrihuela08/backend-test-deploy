@@ -35,6 +35,6 @@ Este proyecto además tiene implementado CI (Integracion continua).
 ```bash
 docker run -p 8080:8080 luisorihuela92/back-test
 ```
-
+3. Ingresamos a la siguiente url:
 ```bash
 http://localhost:8080/swagger-ui.html
