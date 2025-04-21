@@ -35,28 +35,29 @@ Este proyecto además tiene implementado CI (Integracion continua).
 ```bash
 docker run -p 8080:8080 luisorihuela92/back-test
 ```
-3. Ingresamos a la siguiente url(la url dependerá de que entorno se desplegará):
+3. Ingresamos a la siguiente url (la url dependerá de que entorno se desplegará):
    
 ```bash
 http://localhost:8080/swagger-ui-custom.html
+http://IP-SERVER:8080/swagger-ui-custom.html
 ```
 
 ### 🔹 Opción 2: Clonar el repositorio y correrlo de manera local
 1. Clona este repositorio:
    
 ```bash
-git clone https://github.com/tu-usuario/back-test.git
+git [clone https://github.com/tu-usuario/back-test.git](https://github.com/LuisOrihuela08/backend-test-deploy.git)
 cd back-test
 ```
 
-2.Asegúrate de tener Java 17 y Maven instalados.
+2. Asegúrate de tener Java 17 y Maven instalados.
 3. Ejecuta el proyecto con:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-4.Visita Swagger en:
+4. Visita Swagger en:
 ```bash
-http://localhost:8080/swagger-ui.html
+http://localhost:8080/swagger-ui-custom.html
 ```
