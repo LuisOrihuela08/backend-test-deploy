@@ -45,10 +45,9 @@ http://IP-SERVER:8080/swagger-ui-custom.html
 ### 🔹 Opción 2: Clonar el repositorio y correrlo de manera local
 1. Clona este repositorio:
  
-git clone [https://github.com/LuisOrihuela08/backend-test-deploy.git](https://github.com/LuisOrihuela08/backend-test-deploy.git)
-
 ```bash
-cd back-test
+git clone https://github.com/LuisOrihuela08/backend-test-deploy.git
+cd backend-test-deploy
 ```
 
 2. Asegúrate de tener Java 17 y Maven instalados.
