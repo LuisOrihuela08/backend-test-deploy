@@ -44,8 +44,9 @@ http://IP-SERVER:8080/swagger-ui-custom.html
 
 ### 🔹 Opción 2: Clonar el repositorio y correrlo de manera local
 1. Clona este repositorio:
-   
+```bash   
 git clone [https://github.com/LuisOrihuela08/backend-test-deploy.git](https://github.com/LuisOrihuela08/backend-test-deploy.git)
+```
 ```bash
 cd back-test
 ```
