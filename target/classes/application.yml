@@ -36,7 +36,8 @@ spring:
 
 server:
   forward-headers-strategy: framework  # Habilita detección de protocolo HTTPS en producción
- 
+  port: 5000
+
 springdoc:    
   swagger-ui:
     path: /swagger-ui-custom.html

@@ -36,7 +36,8 @@ spring:
 
 server:
   forward-headers-strategy: framework  # Habilita detección de protocolo HTTPS en producción
- 
+  port: 5000 #Este numero de puerto es para desplegarlo en AWS Elastic Beanstalk, ya que por defecto utiliza este puerto porque trabaja con NGnix
+
 springdoc:    
   swagger-ui:
     path: /swagger-ui-custom.html
