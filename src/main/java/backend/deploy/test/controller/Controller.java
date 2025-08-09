@@ -9,11 +9,11 @@ public class Controller {
 
 	@GetMapping("/hello")
 	public String hola() {
-		return "Hola, te saludo desde la nube :)";
+		return "Hola, te saludo desde la nube :) - GET";
 	}
 	
 	@PostMapping("/saludo")
 	public String saludo() {
-		return "Te saludo yo también :)";
+		return "Te saludo yo también :) - POST";
 	}
 }
