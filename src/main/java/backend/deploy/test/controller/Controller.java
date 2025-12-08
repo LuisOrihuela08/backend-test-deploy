@@ -14,7 +14,7 @@ public class Controller {
 	
 	@PostMapping("/saludo")
 	public String saludo() {
-		return "Te saludo yo también :) - POST";
+		return "Te saludo yo también desde la nube :) - POST";
 	}
 
 }
